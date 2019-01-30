@@ -1,26 +1,154 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Card, CardWrapper } from 'react-swipeable-cards';
+import "./App.css";
+import Pic1 from "./img/artist1.jpg";
+import Pic2 from "./img/artist2.jpg";
+import Pic3 from "./img/artist3.jpg";
+import Pic4 from "./img/artist4.jpg";
+import Pic5 from "./img/artist5.jpg";
+import Pic6 from "./img/artist6.jpg";
+import Pic7 from "./img/artist7.jpg";
+import { Button } from 'reactstrap';
+import { SocialIcon } from 'react-social-icons';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import classNames from 'classnames';
+import background_video from './DJ_Audio.mp4';
+
+// https://github.com/ravelinx22/react-swipeable-cards
+
+import {
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon
+} from 'react-share';
 
 class App extends Component {
+
+  constructor(props) {
+  super(props);
+  // Don't call this.setState() here!
+  this.state = { moreContentAvail: true, loggedIn: false };
+  this.login=this.login.bind(this);
+}
+
+  login() {
+    this.setState({loggedIn: true});
+  }
+
+
+
+  renderCards() { 
+    if (this.state.loggedIn==true) {
+      return (
+        <CardWrapper>
+            <Card style={{backgroundColor:"#D0D0D0"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Mark Smith</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Independent Artist</h5>
+              <h6 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Evanston Area</h6>
+              <img style={{height:"50%",marginLeft:"2%",marginTop:"5%"}} src={Pic1}/>
+              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+            </Card>
+
+            <Card style={{backgroundColor:"#D0D0D0"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Benny Berger</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >DJ/Producer</h5>
+              <h6 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Lincoln Park</h6>
+              <img style={{height:"50%",marginLeft:"2%",marginTop:"5%"}} src={Pic2}/>
+              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+            </Card>
+
+            <Card style={{backgroundColor:"#D0D0D0"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >John Solomon</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >DJ/Producer</h5>
+              <h6 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Lincoln Park</h6>
+              <img style={{height:"50%",marginLeft:"2%",marginTop:"5%"}} src={Pic3}/>
+              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+            </Card>
+
+            <Card style={{backgroundColor:"#D0D0D0"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >DJ Mark</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >DJ/Producer</h5>
+              <h6 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Lincoln Park</h6>
+              <img style={{height:"50%",marginLeft:"2%",marginTop:"5%"}} src={Pic4}/>
+              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+            </Card>
+
+            <Card style={{backgroundColor:"#D0D0D0"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Scott Gregus</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >DJ/Producer</h5>
+              <h6 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Lincoln Park</h6>
+              <img style={{height:"50%",marginLeft:"2%",marginTop:"5%"}} src={Pic5}/>
+              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+            </Card>
+
+            <Card style={{backgroundColor:"#D0D0D0"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Lazy Bones</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Band</h5>
+              <h6 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Ithaca, NY</h6>
+              <img style={{height:"50%",marginLeft:"2%",marginTop:"5%"}} src={Pic6}/>
+              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+            </Card>
+
+            <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#D0D0D0"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Wop St.</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >DJ/Producer</h5>
+              <h6 style={{textAlign:"center",color:"#000000",marginTop:"2%",fontStyle:"italic"}} >Evanston, IL</h6>
+              <img style={{height:"50%",marginLeft:"2%",marginTop:"5%"}} src={Pic7}/>
+              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+            </Card>
+        </CardWrapper>
+        );
+    }
+
+    else {
+      return (
+        <div>
+        <video className='videoTag' style={{width:"100%",opacity:"0.9"}} autoPlay loop muted>
+            <source src={background_video} type='video/mp4' /> </video>
+        <form noValidate autoComplete="off" style={{textAlign:"center"}}>
+        <TextField style={{multilineColor:"#ffffff",width:"50%"}}
+          id="standard-name"
+          label="Name"
+          value={this.state.name}
+          margin="normal"
+        />
+        <br/>
+        <TextField style={{multilineColor:"#ffffff",width:"50%"}}
+          id="standard-password-input"
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+          margin="normal"
+        />
+        </form>
+        <Button onClick={this.login} style={{width:"50%",marginLeft:"25%", marginTop:"1%", borderRadius:"5px",padding:"5px",fontFamily:"Roboto", backgroundColor:"#337ab7",color:"#ffffff"}}>Login</Button>
+        </div>
+
+        );
+    }
+  }
+
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <div className="container" style={{backgroundColor:"#E8E8E8",width:"100%"}}>
+        <nav style={{backgroundColor:"#FF3A4E"}} className="nav">
+            <div className="title" style={{fontWeight:"bold"}} >Tuneder</div>
+        </nav>
+        {this.renderCards()}
+        
+
+
+     </div>
     );
   }
 }
