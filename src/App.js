@@ -19,6 +19,7 @@ import background_video from './DJ_Audio.mp4';
 import WebFont from 'webfontloader';
 import { Button } from 'reactstrap';
 import SwitchExample from "./SwitchExample";
+import { FaCog } from 'react-icons/fa';
 
 // https://github.com/ravelinx22/react-swipeable-cards
 
@@ -38,9 +39,9 @@ class App extends Component {
 
   constructor(props) {
   super(props);
-  // Don't call this.setState() here!
-  this.state = { moreContentAvail: true, loggedIn: false};
+  this.state = { moreContentAvail: true, loggedIn: false, value:50, toggledSettings: false};
   this.login=this.login.bind(this);
+  this.toggleSettings = this.toggleSettings.bind(this);
 }
 
   login() {
@@ -51,34 +52,37 @@ class App extends Component {
     this.setState({ value });
   };
 
-  renderSettings() {
-    const { value } = this.state;
-    return (
-    <div>
-      <Typography style={{width:"65%",fontSize: '18px',fontFamily: 'Roboto Slab, serif',marginTop:"10%"}} id="label">Adjust Your Radius (miles): <a style={{fontWeight:"bold"}}>{ value }</a> </Typography>
-          <Slider style={{width:"65%",marginTop:"2%",marginBottom:"5%"}}
-            value={value}
-            aria-labelledby="label"
-            onChange={this.handleChange}
-          />
+  toggleSettings() {
+    if (this.state.toggledSettings==true) {
+      this.setState({toggledSettings: false});
+    }
+    else {
+       this.setState({toggledSettings: true});
+    }
+  }
 
-        <SwitchExample name="Rap"/>
-        <SwitchExample name="Hip Hop/R&B"/>
-        <SwitchExample name="Jazz"/>
-        <SwitchExample name="Classical"/>
-        <SwitchExample name="EDM/House"/>
-        <SwitchExample name="Rock"/>
-        <SwitchExample name="Pop"/>
-        <SwitchExample name="Country"/>
-      </div>
-      );
+
+  renderSettings() {
+    if ((this.state.toggledSettings==true) && (this.state.loggedIn==true)) {
+    return (
+      <div>
+          <SwitchExample name="Rap"/>
+          <SwitchExample name="Hip Hop/R&B"/>
+          <SwitchExample name="Jazz"/>
+          <SwitchExample name="Classical"/>
+          <SwitchExample name="EDM/House"/>
+          <SwitchExample name="Rock"/>
+          <SwitchExample name="Pop"/>
+          <SwitchExample name="Country"/>
+        </div>
+        );
+    }
   }
 
 
   renderCards() { 
     if (this.state.loggedIn==true) {
       return (
-
       <div className="main">  
         <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
             <Card style={{backgroundColor:"#D0D0D0"}}>
@@ -168,9 +172,13 @@ class App extends Component {
     return (
       <div className="container" style={{backgroundColor:"#E8E8E8",width:"100%"}}>
         <nav style={{backgroundColor:"#FF3A4E"}} className="nav">
-            <div className="title" style={{fontWeight:"bold"}} >Tuneder</div>
+            <Button onClick={this.toggleSettings} style={{left:"0"}}><FaCog/></Button>
+            <div className="title" style={{fontWeight:"bold"}}>Tuneder</div>
+           
         </nav>
+        {this.renderSettings()}
         {this.renderCards()}
+
         
 
 
