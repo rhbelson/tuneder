@@ -64,8 +64,9 @@ class App extends Component {
 
   renderSettings() {
     if ((this.state.toggledSettings==true) && (this.state.loggedIn==true)) {
+      const value=this.state.value;
     return (
-      <div style={{marginTop:"2%"}}>
+      <div style={{marginTop:"2%",fontFamily: 'Roboto Slab, serif'}}>
           <SwitchExample name="Rap"/>
           <SwitchExample name="Hip Hop/R&B"/>
           <SwitchExample name="Jazz"/>
@@ -74,6 +75,16 @@ class App extends Component {
           <SwitchExample name="Rock"/>
           <SwitchExample name="Pop"/>
           <SwitchExample name="Country"/>
+        
+        <div style={{backgroundColor:"#F6F5AE",padding:"2%"}}>
+          <Typography style={{width:"75%",fontSize: '18px',fontFamily: 'Roboto Slab, serif',marginTop:"1%"}} id="label">Adjust Your Radius: <a style={{fontWeight:"bold"}}>{ value } miles from me</a> </Typography>
+          <Slider style={{width:"65%",marginTop:"2%",marginBottom:"5%"}}
+            value={this.state.value}
+            aria-labelledby="label"
+            onChange={this.handleChange}
+          />
+        </div>
+
         </div>
         );
     }
