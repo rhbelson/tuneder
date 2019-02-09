@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Card, CardWrapper } from 'react-swipeable-cards';
 import "./App.css";
-import Pic1 from "./img/artist1.jpg";
-import Pic2 from "./img/artist2.jpg";
-import Pic3 from "./img/artist3.jpg";
-import Pic4 from "./img/artist4.jpg";
-import Pic5 from "./img/artist5.jpg";
-import Pic6 from "./img/artist6.jpg";
-import Pic7 from "./img/artist7.jpg";
+import Pic1 from "./img/NONAME.jpg";
+import Pic2 from "./img/LAVANGOGH.jpg";
+import Pic3 from "./img/JEANDEAUX.jpg";
+import Pic4 from "./img/NESSHEADS.png";
+import Pic5 from "./img/OMARAPOLLO.jpg";
+import Pic6 from "./img/SENMORIMOTO.jpg";
+import Pic7 from "./img/TULANI.jpg";
 import { SocialIcon } from 'react-social-icons';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -17,7 +17,7 @@ import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import background_video from './DJ_Audio.mp4';
 import WebFont from 'webfontloader';
-import { Button } from 'reactstrap';
+import { Button, Col } from 'reactstrap';
 import SwitchExample from "./SwitchExample";
 import { FaCog } from 'react-icons/fa';
 
@@ -65,7 +65,7 @@ class App extends Component {
   renderSettings() {
     if ((this.state.toggledSettings==true) && (this.state.loggedIn==true)) {
     return (
-      <div>
+      <div style={{marginTop:"2%"}}>
           <SwitchExample name="Rap"/>
           <SwitchExample name="Hip Hop/R&B"/>
           <SwitchExample name="Jazz"/>
@@ -85,52 +85,52 @@ class App extends Component {
       return (
       <div className="main">  
         <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
-            <Card style={{backgroundColor:"#D0D0D0"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Mark Smith</h5>
+            <Card style={{backgroundColor:"#C0D6DF"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NONAME</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
-              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
-            <Card style={{backgroundColor:"#D0D0D0"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Benny Berger</h5>
-              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic2}/>
-              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+            <Card style={{backgroundColor:"#C0D6DF"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >L.A. VanGogh</h5>
+              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic2 }/>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
-            <Card style={{backgroundColor:"#D0D0D0"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >John Solomon</h5>
+            <Card style={{backgroundColor:"#C0D6DF"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Jean Deaux</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic3}/>
-              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
-            <Card style={{backgroundColor:"#D0D0D0"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >DJ Mark</h5>
+            <Card style={{backgroundColor:"#C0D6DF"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NESS HEADS</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic4}/>
-              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
-            <Card style={{backgroundColor:"#D0D0D0"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Scott Gregus</h5>
+            <Card style={{backgroundColor:"#C0D6DF"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >OMAR APOLLO</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic5}/>
-              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
-            <Card style={{backgroundColor:"#D0D0D0"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Lazy Bones</h5>
+            <Card style={{backgroundColor:"#C0D6DF"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >SEN MORIMOTO</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic6}/>
-              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
-            <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#D0D0D0"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Wop St.</h5>
+            <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#C0D6DF"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >TULANI</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic7}/>
-              <Button color="danger" style={{marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
         </CardWrapper>
@@ -140,7 +140,7 @@ class App extends Component {
 
     else {
       return (
-        <div>
+        <div style={{backgroundColor:"#E8E8E8",paddingBottom:"10%"}}>
         <video className='videoTag' style={{width:"100%",opacity:"0.9"}} autoPlay loop muted>
             <source src={background_video} type='video/mp4' /> </video>
         <form noValidate autoComplete="off" style={{textAlign:"center", fontFamily: 'Roboto Slab, serif'}}>
@@ -170,11 +170,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container" style={{backgroundColor:"#E8E8E8",width:"100%"}}>
-        <nav style={{backgroundColor:"#FF3A4E"}} className="nav">
-            <Button onClick={this.toggleSettings} style={{left:"0"}}><FaCog/></Button>
-            <div className="title" style={{fontWeight:"bold"}}>Tuneder</div>
-           
+      <div className="container" style={{backgroundColor:"#166088",width:"100%"}}>
+        <nav style={{backgroundColor:"#D8315B"}} className="nav">
+        <Col xs="5"><Button onClick={this.toggleSettings} style={{left:"0",backgroundColor:"#577399"}}><FaCog/></Button></Col>
+          <Col xs="7">
+            <div className="title" style={{fontWeight:"bold"}}>Crescendo</div>
+          </Col>
         </nav>
         {this.renderSettings()}
         {this.renderCards()}

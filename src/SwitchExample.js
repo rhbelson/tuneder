@@ -14,7 +14,7 @@ class SwitchExample extends Component {
  
   render() {
     return (
-      <label htmlFor="normal-switch">
+      <label htmlFor="normal-switch" style={{backgroundColor:"#F6F5AE",padding:"2%",marginRight:"1%",borderRadius:"5px"}}>
         <span>{this.state.name}</span>
         <Switch
           onChange={this.handleChange}
