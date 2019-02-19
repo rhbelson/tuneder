@@ -8,6 +8,15 @@ import Pic4 from "./img/NESSHEADS.png";
 import Pic5 from "./img/OMARAPOLLO.jpg";
 import Pic6 from "./img/SENMORIMOTO.jpg";
 import Pic7 from "./img/TULANI.jpg";
+
+import ReactAudioPlayer from 'react-audio-player';
+import Clip1 from "./music/Noname_clip.mp3";
+import Clip2 from "./music/Gogh_clip.mp3";
+import Clip3 from "./music/Deaux_clip.mp3";
+import Clip4 from "./music/NessHeads_clip.mp3";
+import Clip5 from "./music/Apollo_clip.mp3";
+import Clip6 from "./music/Morimoto_clip.mp3";
+
 import { SocialIcon } from 'react-social-icons';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -20,6 +29,7 @@ import WebFont from 'webfontloader';
 import { Button, Col } from 'reactstrap';
 import SwitchExample from "./SwitchExample";
 import { FaCog } from 'react-icons/fa';
+import Loader from "./Loader";
 
 // https://github.com/ravelinx22/react-swipeable-cards
 
@@ -99,20 +109,28 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NONAME</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
-              <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"1%"}}> Support This Artist</Button>
+              <ReactAudioPlayer style={{marginLeft:"13%"}}
+                src={Clip1}
+                controls
+              />
               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >L.A. VanGogh</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic2 }/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"1%"}}> Support This Artist</Button>
+               <ReactAudioPlayer style={{marginLeft:"13%"}}
+                src={Clip2}
+                controls
+              />
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Jean Deaux</h5>
-              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic3}/>
+              <img style={{height:"50%",marginLeft:"12%",marginTop:"2%"}} src={Pic3}/>
               <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
@@ -133,7 +151,7 @@ class App extends Component {
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >SEN MORIMOTO</h5>
-              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic6}/>
+              <img style={{height:"50%",marginLeft:"22%",marginTop:"2%"}} src={Pic6}/>
               <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
@@ -176,7 +194,6 @@ class App extends Component {
         );
     }
   }
-
 
 
   render() {
