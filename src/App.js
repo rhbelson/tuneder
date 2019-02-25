@@ -30,6 +30,7 @@ import { Button, Col, Modal, ModalHeader, ModalBody, ModalFooter, CardModal, Car
 import SwitchExample from "./SwitchExample";
 import { FaCog } from 'react-icons/fa';
 import Loader from "./Loader";
+import { IoIosMusicalNote } from "react-icons/io";
 
 // https://github.com/ravelinx22/react-swipeable-cards
 
@@ -86,20 +87,22 @@ class App extends Component {
       return (
       <div>
         <Modal isOpen={this.state.modal}>
-          <ModalHeader style={{textAlign:"center"}} toggle={this.toggleProfile}>NONAME</ModalHeader>
+          <ModalHeader toggle={this.toggleProfile}></ModalHeader>
           <ModalBody>
+
               <CardImg top style={{width:"100%"}} src={Pic1}  />
               <CardBody>
+                 <CardTitle style={{textAlign:"left",fontWeight:"bold",fontSize:"20px"}}>NONAME</CardTitle>
+                 <CardSubtitle style={{fontSize:"20px"}}><IoIosMusicalNote/>Artist</CardSubtitle>
                 <CardText>
-                  <p>Fatimah Nyeema Warner (born September 18, 1991), better known by her stage name Noname, is an American rapper and poet. Warner is from the Bronzeville neighborhood of Chicago, Illinois, where she began rapping and performing slam poetry in 2010. In 2013, she gained wider recognition following her appearance on the track "Lost" from Chance the Rapper's popular mixtape Acid Rap.</p>
-                  <a style={{fontWeight:"bold"}}>Next Show Near You: </a><a href='https://www.stubhub.com/noname-tickets-noname-portland-mcmenamins-crystal-ballroom-3-13-2019/event/103917485/'>March 1st @ United Center, 7pm</a>
+                  <p style={{marginTop:"5%"}}>Fatimah Nyeema Warner, better known by her stage name Noname, is from the Bronzeville neighborhood of Chicago, Illinois, where she began rapping and performing slam poetry in 2010.</p>
+                  <a style={{fontWeight:"bold"}}>Known For: </a><a>"Lost" from Chance the Rapper's Acid Rap (2013)</a><br/>
+                  <a style={{fontWeight:"bold"}}>Next Show Near You: </a>
+                  <a href='https://www.stubhub.com/noname-tickets-noname-portland-mcmenamins-crystal-ballroom-3-13-2019/event/103917485/'>March 1st @ United Center, 7pm</a>
                 </CardText>
                 <Button style={{width:"100%"}}>Contact NONAME</Button>
               </CardBody>
           </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.toggleProfile}>Close</Button>{' '}
-          </ModalFooter>
         </Modal>
       </div>
     );
@@ -144,8 +147,8 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NONAME</h5>
               <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
-              <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"1%"}}> Support This Artist</Button>
-              <ReactAudioPlayer style={{marginLeft:"13%"}}
+              <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
+              <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
                 src={Clip1}
                 controls
               />
@@ -155,7 +158,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >L.A. VanGogh</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic2 }/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"1%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
                <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip2}
                 controls
@@ -166,7 +169,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Jean Deaux</h5>
               <img style={{height:"50%",marginLeft:"10%",marginTop:"2%"}} src={Pic3}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip3}
                 controls
@@ -177,7 +180,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NESS HEADS</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic4}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
                 <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip4}
@@ -188,7 +191,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >OMAR APOLLO</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic5}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
               <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip5}
@@ -199,7 +202,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >SEN MORIMOTO</h5>
               <img style={{height:"50%",marginLeft:"22%",marginTop:"2%"}} src={Pic6}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
               <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip6}
@@ -210,7 +213,7 @@ class App extends Component {
             <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >TULANI</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic7}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
         </CardWrapper>
