@@ -26,7 +26,7 @@ import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import background_video from './DJ_Audio.mp4';
 import WebFont from 'webfontloader';
-import { Button, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Col, Modal, ModalHeader, ModalBody, ModalFooter, CardModal, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import SwitchExample from "./SwitchExample";
 import { FaCog } from 'react-icons/fa';
 import Loader from "./Loader";
@@ -88,12 +88,17 @@ class App extends Component {
         <Modal isOpen={this.state.modal}>
           <ModalHeader style={{textAlign:"center"}} toggle={this.toggleProfile}>NONAME</ModalHeader>
           <ModalBody>
-            <p>Fatimah Nyeema Warner (born September 18, 1991), better known by her stage name Noname, is an American rapper and poet. Warner is from the Bronzeville neighborhood of Chicago, Illinois, where she began rapping and performing slam poetry in 2010. In 2013, she gained wider recognition following her appearance on the track "Lost" from Chance the Rapper's popular mixtape Acid Rap.</p>
-            <a style={{fontWeight:"bold"}}>Next Show Near You: </a><a href="https://www.stubhub.com/noname-tickets-noname-portland-mcmenamins-crystal-ballroom-3-13-2019/event/103917485/">March 1st @ United Center, 7pm</a>
-
+              <CardImg top style={{width:"100%"}} src={Pic1}  />
+              <CardBody>
+                <CardText>
+                  <p>Fatimah Nyeema Warner (born September 18, 1991), better known by her stage name Noname, is an American rapper and poet. Warner is from the Bronzeville neighborhood of Chicago, Illinois, where she began rapping and performing slam poetry in 2010. In 2013, she gained wider recognition following her appearance on the track "Lost" from Chance the Rapper's popular mixtape Acid Rap.</p>
+                  <a style={{fontWeight:"bold"}}>Next Show Near You: </a><a href='https://www.stubhub.com/noname-tickets-noname-portland-mcmenamins-crystal-ballroom-3-13-2019/event/103917485/'>March 1st @ United Center, 7pm</a>
+                </CardText>
+                <Button style={{width:"100%"}}>Contact NONAME</Button>
+              </CardBody>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggleProfile}>Back</Button>{' '}
+            <Button color="primary" onClick={this.toggleProfile}>Close</Button>{' '}
           </ModalFooter>
         </Modal>
       </div>
