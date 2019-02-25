@@ -26,7 +26,7 @@ import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import background_video from './DJ_Audio.mp4';
 import WebFont from 'webfontloader';
-import { Button, Col } from 'reactstrap';
+import { Button, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import SwitchExample from "./SwitchExample";
 import { FaCog } from 'react-icons/fa';
 import Loader from "./Loader";
@@ -49,9 +49,10 @@ class App extends Component {
 
   constructor(props) {
   super(props);
-  this.state = { moreContentAvail: true, loggedIn: false, value:50, toggledSettings: false};
+  this.state = { moreContentAvail: true, loggedIn: false, value:50, toggledSettings: false, modal: false};
   this.login=this.login.bind(this);
   this.toggleSettings = this.toggleSettings.bind(this);
+  this.toggleProfile = this.toggleProfile.bind(this);
 }
 
   login() {
@@ -69,6 +70,35 @@ class App extends Component {
     else {
        this.setState({toggledSettings: true});
     }
+  }
+
+  toggleProfile() {
+    console.log("toggleProfile called");
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
+
+  renderProfile() {
+    console.log("gotoProfile called");
+    if (this.state.modal==true) {
+      console.log("Modal should open!");
+      return (
+      <div>
+        <Modal isOpen={this.state.modal}>
+          <ModalHeader style={{textAlign:"center"}} toggle={this.toggleProfile}>NONAME</ModalHeader>
+          <ModalBody>
+            <p>Fatimah Nyeema Warner (born September 18, 1991), better known by her stage name Noname, is an American rapper and poet. Warner is from the Bronzeville neighborhood of Chicago, Illinois, where she began rapping and performing slam poetry in 2010. In 2013, she gained wider recognition following her appearance on the track "Lost" from Chance the Rapper's popular mixtape Acid Rap.</p>
+            <a style={{fontWeight:"bold"}}>Next Show Near You: </a><a href="https://www.stubhub.com/noname-tickets-noname-portland-mcmenamins-crystal-ballroom-3-13-2019/event/103917485/">March 1st @ United Center, 7pm</a>
+
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggleProfile}>Back</Button>{' '}
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  }
   }
 
 
@@ -108,7 +138,7 @@ class App extends Component {
         <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NONAME</h5>
-              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
+              <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
               <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"1%"}}> Support This Artist</Button>
               <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip1}
@@ -130,8 +160,12 @@ class App extends Component {
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Jean Deaux</h5>
-              <img style={{height:"50%",marginLeft:"12%",marginTop:"2%"}} src={Pic3}/>
+              <img style={{height:"50%",marginLeft:"10%",marginTop:"2%"}} src={Pic3}/>
               <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
+               <ReactAudioPlayer style={{marginLeft:"13%"}}
+                src={Clip3}
+                controls
+              />
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
@@ -140,6 +174,10 @@ class App extends Component {
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic4}/>
               <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+                <ReactAudioPlayer style={{marginLeft:"13%"}}
+                src={Clip4}
+                controls
+              />
             </Card>
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
@@ -147,6 +185,10 @@ class App extends Component {
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic5}/>
               <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+              <ReactAudioPlayer style={{marginLeft:"13%"}}
+                src={Clip5}
+                controls
+              />
             </Card>
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
@@ -154,6 +196,10 @@ class App extends Component {
               <img style={{height:"50%",marginLeft:"22%",marginTop:"2%"}} src={Pic6}/>
               <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"10%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+              <ReactAudioPlayer style={{marginLeft:"13%"}}
+                src={Clip6}
+                controls
+              />
             </Card>
 
             <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#C0D6DF"}}>
@@ -205,6 +251,7 @@ class App extends Component {
             <div className="title" style={{fontWeight:"bold"}}>Crescendo</div>
           </Col>
         </nav>
+        {this.renderProfile()}
         {this.renderSettings()}
         {this.renderCards()}
 
