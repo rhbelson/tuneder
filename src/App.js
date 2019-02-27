@@ -31,6 +31,7 @@ import SwitchExample from "./SwitchExample";
 import { FaCog } from 'react-icons/fa';
 import Loader from "./Loader";
 import { IoIosMusicalNote } from "react-icons/io";
+import {IoIosStats} from "react-icons/io";
 
 // https://github.com/ravelinx22/react-swipeable-cards
 
@@ -50,7 +51,7 @@ class App extends Component {
 
   constructor(props) {
   super(props);
-  this.state = { moreContentAvail: true, loggedIn: false, value:50, toggledSettings: false, modal: false};
+  this.state = { moreContentAvail: true, loggedIn: false, value:50, toggledSettings: false, modal: false, username: ""};
   this.login=this.login.bind(this);
   this.toggleSettings = this.toggleSettings.bind(this);
   this.toggleProfile = this.toggleProfile.bind(this);
@@ -62,6 +63,10 @@ class App extends Component {
 
   handleChange = (event, value) => {
     this.setState({ value });
+  };
+
+  handleChange = username => event => {
+    this.setState({ [username]: event.target.value });
   };
 
   toggleSettings() {
@@ -109,6 +114,19 @@ class App extends Component {
   }
   }
 
+  renderArtist() {
+    if ((this.state.username=="artist") && (this.state.loggedIn==true)) {
+      console.log("artist profile should render");
+      return (
+         <div className="main"> 
+         <h2>Welcome, {this.state.username}</h2> 
+         </div>
+
+        );
+    }
+
+  }
+
 
   renderSettings() {
     if ((this.state.toggledSettings==true) && (this.state.loggedIn==true)) {
@@ -140,7 +158,7 @@ class App extends Component {
 
 
   renderCards() { 
-    if (this.state.loggedIn==true) {
+    if ((this.state.loggedIn==true) && (this.state.username!="artist")) {
       return (
       <div className="main">  
         <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
@@ -230,7 +248,7 @@ class App extends Component {
         <TextField style={{multilineColor:"#ffffff",width:"50%"}}
           id="standard-name"
           label="Name"
-          value={this.state.name}
+          onChange={this.handleChange('username')}
           margin="normal"
         />
         <br/>
@@ -254,14 +272,18 @@ class App extends Component {
     return (
       <div className="container" style={{backgroundColor:"#166088",width:"100%"}}>
         <nav style={{backgroundColor:"#D8315B"}} className="nav">
-        <Col xs="5"><Button onClick={this.toggleSettings} style={{left:"0",backgroundColor:"#577399"}}><FaCog/></Button></Col>
-          <Col xs="7">
+        <Col xs="5">
+        <Button onClick={this.toggleSettings} style={{left:"0",backgroundColor:"#577399"}}><FaCog/></Button>
+            <Button style={{marginLeft:"5px",backgroundColor:"#577399"}}><IoIosStats/></Button>
+        </Col>
+        <Col xs="7">
             <div className="title" style={{fontWeight:"bold"}}>Crescendo</div>
           </Col>
         </nav>
         {this.renderProfile()}
         {this.renderSettings()}
         {this.renderCards()}
+    
 
         
 
