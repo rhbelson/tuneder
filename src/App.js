@@ -26,11 +26,11 @@ import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import background_video from './DJ_Audio.mp4';
 import WebFont from 'webfontloader';
-import { Button, Col, Modal, ModalHeader, ModalBody, ModalFooter, CardModal, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Button, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter, CardModal, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import SwitchExample from "./SwitchExample";
-import { FaCog } from 'react-icons/fa';
+import { FaCog, FaMoneyBillWave } from 'react-icons/fa';
 import Loader from "./Loader";
-import { IoIosMusicalNote } from "react-icons/io";
+import { IoIosMusicalNote, IoMdHeadset, IoIosMusicalNotes } from "react-icons/io";
 import {IoIosStats} from "react-icons/io";
 
 // https://github.com/ravelinx22/react-swipeable-cards
@@ -51,10 +51,11 @@ class App extends Component {
 
   constructor(props) {
   super(props);
-  this.state = { moreContentAvail: true, loggedIn: false, value:50, toggledSettings: false, modal: false, username: ""};
+  this.state = { moreContentAvail: true, loggedIn: false, value:50, toggledSettings: false, toggledStats: false, modal: false, username: "Crescendo User"};
   this.login=this.login.bind(this);
   this.toggleSettings = this.toggleSettings.bind(this);
   this.toggleProfile = this.toggleProfile.bind(this);
+  this.toggleStats=this.toggleStats.bind(this);
 }
 
   login() {
@@ -75,6 +76,15 @@ class App extends Component {
     }
     else {
        this.setState({toggledSettings: true});
+    }
+  }
+
+  toggleStats() {
+    if (this.state.toggledStats==true) {
+      this.setState({toggledStats: false});
+    }
+    else {
+       this.setState({toggledStats: true});
     }
   }
 
@@ -114,17 +124,35 @@ class App extends Component {
   }
   }
 
-  renderArtist() {
-    if ((this.state.username=="artist") && (this.state.loggedIn==true)) {
-      console.log("artist profile should render");
-      return (
-         <div className="main"> 
-         <h2>Welcome, {this.state.username}</h2> 
-         </div>
 
+
+  renderStats() {
+    if ((this.state.toggledStats==true) && (this.state.loggedIn==true)) {
+    return (
+      <div style={{marginTop:"2%",fontFamily: 'Roboto Slab, serif',backgroundColor:"#F6F5AE"}}>
+          <h3 style={{marginLeft:"5px"}}>Welcome, {this.state.username}!</h3> 
+          <Row style={{marginLeft:"5px"}}>
+          <Col>
+          <IoMdHeadset style={{fontSize:"400%"}}/> 
+            <h5> Total Monthly Listens</h5> 
+            <h4 style={{fontWeight:"bold",marginTop:"20%"}}> 120 Plays <a style={{color:"green"}}>(+50%)</a> </h4> 
+          </Col>
+          
+          <Col>
+          <IoIosMusicalNotes style={{fontSize:"400%"}}/>
+            <h5> Total Secret Streams</h5> 
+            <h4 style={{fontWeight:"bold",marginTop:"20%"}}> 200 Streams <a style={{color:"green"}}>(+75%)</a></h4> 
+          </Col>
+
+          <Col>
+          <FaMoneyBillWave style={{fontSize:"400%"}}/> 
+            <h5>Total Monthly Revenue</h5> 
+            <h4 style={{fontWeight:"bold",marginTop:"20%"}}> $250.45 <a style={{color:"red"}}>(-20.4%) </a></h4> 
+          </Col>
+          </Row>
+        </div>
         );
     }
-
   }
 
 
@@ -274,7 +302,7 @@ class App extends Component {
         <nav style={{backgroundColor:"#D8315B"}} className="nav">
         <Col xs="5">
         <Button onClick={this.toggleSettings} style={{left:"0",backgroundColor:"#577399"}}><FaCog/></Button>
-            <Button style={{marginLeft:"5px",backgroundColor:"#577399"}}><IoIosStats/></Button>
+            <Button onClick={this.toggleStats} style={{marginLeft:"5px",backgroundColor:"#577399"}}><IoIosStats/></Button>
         </Col>
         <Col xs="7">
             <div className="title" style={{fontWeight:"bold"}}>Crescendo</div>
@@ -282,6 +310,7 @@ class App extends Component {
         </nav>
         {this.renderProfile()}
         {this.renderSettings()}
+        {this.renderStats()}
         {this.renderCards()}
     
 
