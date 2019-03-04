@@ -30,6 +30,7 @@ import { Button, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter, CardModal
 import SwitchExample from "./SwitchExample";
 import { FaCog, FaMoneyBillWave } from 'react-icons/fa';
 import Loader from "./Loader";
+import AChart from "./AreaChart";
 import { IoIosMusicalNote, IoMdHeadset, IoIosMusicalNotes } from "react-icons/io";
 import {IoIosStats} from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
@@ -154,6 +155,11 @@ class App extends Component {
             <h4 style={{fontWeight:"bold",marginTop:"20%"}}> $250.45 <a style={{color:"red"}}>(-20.4%) </a></h4> 
           </Col>
           </Row>
+          
+          <div style={{marginLeft:"5%",marginTop:"5%"}}>
+            <AChart/>
+          </div>
+
         </div>
         );
     }
