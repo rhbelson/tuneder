@@ -32,6 +32,8 @@ import { FaCog, FaMoneyBillWave } from 'react-icons/fa';
 import Loader from "./Loader";
 import { IoIosMusicalNote, IoMdHeadset, IoIosMusicalNotes } from "react-icons/io";
 import {IoIosStats} from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // https://github.com/ravelinx22/react-swipeable-cards
 
@@ -57,6 +59,8 @@ class App extends Component {
   this.toggleProfile = this.toggleProfile.bind(this);
   this.toggleStats=this.toggleStats.bind(this);
 }
+
+  notify = () => toast.success("Secret stream added to your collection");
 
   login() {
     this.setState({loggedIn: true});
@@ -189,11 +193,12 @@ class App extends Component {
     if ((this.state.loggedIn==true) && (this.state.username!="artist")) {
       return (
       <div className="main">  
+      <ToastContainer />
         <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NONAME</h5>
               <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
-              <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
+              <Button onClick={this.notify} style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
               <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
                 src={Clip1}
                 controls
