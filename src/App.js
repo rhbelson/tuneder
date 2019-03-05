@@ -36,14 +36,26 @@ import { IoIosMusicalNote, IoMdHeadset, IoIosMusicalNotes } from "react-icons/io
 import {IoIosStats} from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-// https://github.com/ravelinx22/react-swipeable-cards
-
 import {
   FacebookIcon,
   LinkedinIcon,
   TwitterIcon
 } from 'react-share';
+
+let firebase = require("firebase");
+let config = {
+    apiKey: "AIzaSyDJps32F1QsgoVrC0BQeTqu-DgtpGOskVM",
+    authDomain: "crescendo-music.firebaseapp.com",
+    databaseURL: "https://crescendo-music.firebaseio.com",
+    projectId: "crescendo-music",
+    storageBucket: "crescendo-music.appspot.com",
+    messagingSenderId: "514981425947"
+  };
+  firebase.initializeApp(config);
+
+// https://github.com/ravelinx22/react-swipeable-cards
+
+
 
 WebFont.load({
   google: {
@@ -61,6 +73,20 @@ class App extends Component {
   this.toggleProfile = this.toggleProfile.bind(this);
   this.toggleStats=this.toggleStats.bind(this);
 }
+
+
+  componentDidMount() {
+    console.log("Reading Data");
+    return firebase.database().ref('Artists/').once('value').then(snapshot => {
+      const attributes = snapshot.val();
+      console.log(attributes);
+      // return Object.keys(attributes).map(n => Object.assign({}, attributes[n]));
+      return attributes;
+    })
+  
+  }
+
+
 
   notify = () => toast.success("Secret stream added to your collection");
 
