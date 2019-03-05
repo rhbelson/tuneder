@@ -16,6 +16,7 @@ import Clip3 from "./music/Deaux_clip.mp3";
 import Clip4 from "./music/NessHeads_clip.mp3";
 import Clip5 from "./music/Apollo_clip.mp3";
 import Clip6 from "./music/Morimoto_clip.mp3";
+import Clip7 from "./music/tulani_clip.mp3";
 
 import { SocialIcon } from 'react-social-icons';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -110,17 +111,17 @@ class App extends Component {
           <ModalHeader toggle={this.toggleProfile}></ModalHeader>
           <ModalBody>
 
-              <CardImg top style={{width:"100%"}} src={Pic1}  />
+              <CardImg top style={{width:"100%"}} src={Pic7}  />
               <CardBody>
-                 <CardTitle style={{textAlign:"left",fontWeight:"bold",fontSize:"20px"}}>NONAME</CardTitle>
+                 <CardTitle style={{textAlign:"left",fontWeight:"bold",fontSize:"20px"}}>Chai Tulani</CardTitle>
                  <CardSubtitle style={{fontSize:"20px"}}><IoIosMusicalNote/>Artist</CardSubtitle>
                 <CardText>
-                  <p style={{marginTop:"5%"}}>Fatimah Nyeema Warner, better known by her stage name Noname, is from the Bronzeville neighborhood of Chicago, Illinois, where she began rapping and performing slam poetry in 2010.</p>
-                  <a style={{fontWeight:"bold"}}>Known For: </a><a>"Lost" from Chance the Rapper's Acid Rap (2013)</a><br/>
+                  <p style={{marginTop:"5%"}}>Chai Tulani was born in Nakuru, Kenya and raised in Chicago, IL. Though Tulani moved to the states at only four years old, his culture remains one of the main ingredients of his music. Known for his raspy but soulful voice, Tulani creates a wide variety of music merging genres like reggae, soul, Afro beat and hip-hop.</p>
+                  <a style={{fontWeight:"bold"}}>Genre: </a><a>Afrobeat, hip-hop, pop</a><br/>
                   <a style={{fontWeight:"bold"}}>Next Show Near You: </a>
-                  <a href='https://www.stubhub.com/noname-tickets-noname-portland-mcmenamins-crystal-ballroom-3-13-2019/event/103917485/'>March 1st @ United Center, 7pm</a>
+                  <a>TBD </a>
                 </CardText>
-                <Button style={{width:"100%"}}>Contact NONAME</Button>
+                <Button href='https://mail.google.com/mail/?view=cm&fs=1&to=chaitulanimanagment@gmail.com&su=Crescendo+User+Inquiry&body=Thank+you+for+choosing+Crescendo!' style={{width:"100%"}}>Contact Tulani</Button>
               </CardBody>
           </ModalBody>
         </Modal>
@@ -204,7 +205,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NONAME</h5>
               <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
-              <Button onClick={this.notify} style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
+              <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
               <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
                 src={Clip1}
                 controls
@@ -212,10 +213,21 @@ class App extends Component {
               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
             </Card>
 
+            <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#C0D6DF"}}>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >TULANI</h5>
+              <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic7}/>
+              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
+               <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
+                src={Clip7}
+                controls
+              />
+               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+            </Card>
+
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >L.A. VanGogh</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic2 }/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
+              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
                <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip2}
                 controls
@@ -226,7 +238,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Jean Deaux</h5>
               <img style={{height:"50%",marginLeft:"10%",marginTop:"2%"}} src={Pic3}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip3}
                 controls
@@ -237,7 +249,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NESS HEADS</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic4}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
                 <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip4}
@@ -248,7 +260,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >OMAR APOLLO</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic5}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
               <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip5}
@@ -259,7 +271,7 @@ class App extends Component {
             <Card style={{backgroundColor:"#C0D6DF"}}>
               <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >SEN MORIMOTO</h5>
               <img style={{height:"50%",marginLeft:"22%",marginTop:"2%"}} src={Pic6}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
+              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
               <ReactAudioPlayer style={{marginLeft:"13%"}}
                 src={Clip6}
@@ -267,12 +279,6 @@ class App extends Component {
               />
             </Card>
 
-            <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >TULANI</h5>
-              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic7}/>
-              <Button color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
-               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-            </Card>
         </CardWrapper>
     </div>
         );
