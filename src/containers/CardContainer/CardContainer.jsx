@@ -26,7 +26,7 @@ class CardContainer extends PureComponent {
 
     this.state = {
       hasError: false,
-    };
+    }; 
   }
 
   render () {

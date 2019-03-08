@@ -23,25 +23,23 @@ class Login extends PureComponent {
         <video className='videoTag' style={{width:"100%",opacity:"0.9"}} autoPlay loop muted>
             <source src={background_video} type='video/mp4' /> </video>
         <form noValidate autoComplete="off" style={{textAlign:"center", fontFamily: 'Roboto Slab, serif'}}>
-        <TextField style={{multilineColor:"#ffffff",width:"50%"}}
-          id="standard-name"
-          label="Name"
-          // onChange={this.handleChange('username')}
-          margin="normal"
-        />
-        <br/>
-        <TextField style={{multilineColor:"#ffffff",width:"50%"}}
-          id="standard-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          margin="normal"
-        />
+          <TextField style={{multilineColor:"#ffffff",width:"50%"}}
+            id="standard-name"
+            label="Name"
+            onChange={this.props.handleChange}
+            margin="normal"
+          />
+          <br/>
+          <TextField style={{multilineColor:"#ffffff",width:"50%"}}
+            id="standard-password-input"
+            label="Password"
+            type="password"
+            autoComplete="current-password"
+            margin="normal"
+          />
         </form>
         <Button onClick={this.props.login} style={{width:"50%",marginLeft:"25%", marginTop:"1%", borderRadius:"5px",padding:"5px",fontFamily: 'Roboto', backgroundColor:"#337ab7",color:"#ffffff"}}>Login</Button>
-        
-        </div>
-
+      </div>
       </div>
     );
   }
