@@ -203,7 +203,7 @@ class App extends Component {
       <ToastContainer />
         <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
             <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NONAME</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Noname</h5>
               <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
               <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
               <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
@@ -214,7 +214,7 @@ class App extends Component {
             </Card>
 
             <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >TULANI</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Chai Tulani</h5>
               <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic7}/>
               <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
@@ -247,7 +247,7 @@ class App extends Component {
             </Card>
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NESS HEADS</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Ness Heads</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic4}/>
               <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
@@ -258,7 +258,7 @@ class App extends Component {
             </Card>
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >OMAR APOLLO</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Omar Apollo</h5>
               <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic5}/>
               <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
@@ -269,7 +269,7 @@ class App extends Component {
             </Card>
 
             <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >SEN MORIMOTO</h5>
+              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Sen Morimoto</h5>
               <img style={{height:"50%",marginLeft:"22%",marginTop:"2%"}} src={Pic6}/>
               <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
                <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
