@@ -17,6 +17,9 @@ class Settings extends PureComponent {
     };
   }
 
+  handleChange = () => {
+    
+  }
   render () {
     if (this.state.hasError) {
       return <h1>Something went wrong.</h1>;

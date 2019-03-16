@@ -36,24 +36,30 @@ WebFont.load({
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { moreContentAvail: true, loggedIn: false, value:50, toggledSettings: false, toggledStats: false, modal: false, username: "Crescendo User", artists:[]};
+    this.state = { 
+      moreContentAvail: true, 
+      loggedIn: false, 
+      value:50, 
+      toggledSettings: false, 
+      toggledStats: false, 
+      modal: false, 
+      username: "Crescendo User", 
+      artists:[],
+      artistProfile:[]
+    };
   }
 
-
   componentDidMount() {
-    console.log("Reading Data");
     return firebase.database().ref('Artists/').once('value').then(snapshot => {
       const attributes = snapshot.val();
       this.setState({artists: attributes});
-      // return Object.keys(attributes).map(n => Object.assign({}, attributes[n]));
       return attributes;
     })
   
   }
 
-
-
   notify = () => toast.success("Secret stream added to your collection");
+
   login = () => {
     this.setState({loggedIn: true});
   }
@@ -62,20 +68,9 @@ class App extends Component {
     this.setState({ username: event.target.value });
   };
 
-  toggleSettings = () => {
-      this.setState({toggledSettings: !this.state.toggledSettings});
-  }
 
-  toggleStats = () => {
-      this.setState({toggledStats: !this.state.toggledStats});
-  }
-
-  toggleProfile = () => {
-    this.setState({modal: !this.state.modal});
-  }
 
   optionEdit = (settingValue, statsValue, loggedInStatus) => {
-     console.log(loggedInStatus);
       this.setState({
         toggledSettings: settingValue,
         toggledStats: statsValue,
@@ -84,8 +79,21 @@ class App extends Component {
     
   }
 
+  showProfile = (profileStatus, artistProfile) => {
+    this.setState({
+      modal: profileStatus,
+      artistProfile: artistProfile
+    })
+  }
+
+  closeProfile = (profileStatus) => {
+    this.setState({
+      modal: profileStatus
+    })
+  }
+
   render() {
-    const { loggedIn, toggledSettings, toggledStats, modal, username, artists} = this.state;
+    const { loggedIn, toggledSettings, toggledStats, modal, username, artists, artistProfile} = this.state;
     return (
       <div className="container">
 
@@ -98,10 +106,10 @@ class App extends Component {
         }
         <NavContainer buttonClick={this.optionEdit.bind(this)} loggedIn={ loggedIn }/>
         <div className = "main">
-          {modal && <Profile />}
+          {modal && <Profile modal={modal} artistProfile={artistProfile} closeProfile={this.closeProfile.bind(this)}/>}
           {(loggedIn&&toggledSettings) && <Settings />}
           {(loggedIn&&toggledStats) && <Status />}
-          {(loggedIn&&(username !=='artist')) && <CardContainer artists={artists} />}
+          {(loggedIn&&(username !=='artist')) && <CardContainer artists={artists} showProfile={this.showProfile.bind(this)}/>}
         </div>
 
       </div>

@@ -19,7 +19,7 @@ class Login extends PureComponent {
     }
     return (
       <div className="LoginWrapper">
-        <div style={{backgroundColor:"#E8E8E8",paddingBottom:"10%"}}>
+        <div style={{backgroundColor:"#E8E8E8",paddingBottom:"2%"}}>
         <video className='videoTag' style={{width:"100%",opacity:"0.9"}} autoPlay loop muted>
             <source src={background_video} type='video/mp4' /> </video>
         <form noValidate autoComplete="off" style={{textAlign:"center", fontFamily: 'Roboto Slab, serif'}}>

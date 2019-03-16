@@ -33,7 +33,6 @@ class NavContainer extends PureComponent {
     }
   
     render () {
-        console.log(this.state.loggedIn);
       return (
         <nav className="nav">
         <Col xs="5">

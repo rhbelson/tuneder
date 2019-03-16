@@ -10,26 +10,34 @@ class Profile extends PureComponent {
 
     this.state = {
       hasError: false,
+      modal:this.props.modal,
+      artistProfile:this.props.artistProfile
     };
   }
 
+  toggleProfile = () => {
+    this.props.closeProfile(!this.state.modal);
+    this.setState({modal: !this.state.modal});
+  }
+  
   render () {
     if (this.state.hasError) {
       return <h1>Something went wrong.</h1>;
     }
+    const { artistProfile } = this.state
     return (
       <div className="ProfileWrapper">
         <Modal isOpen={this.state.modal}>
           <ModalHeader toggle={this.toggleProfile}></ModalHeader>
           <ModalBody>
 
-              <CardImg top style={{width:"100%"}} src={Pic7}  />
+              <CardImg top style={{width:"100%"}} src={artistProfile['image']}  />
               <CardBody>
-                 <CardTitle style={{textAlign:"left",fontWeight:"bold",fontSize:"20px"}}>Chai Tulani</CardTitle>
+                 <CardTitle style={{textAlign:"left",fontWeight:"bold",fontSize:"20px"}}>{artistProfile['artist']}</CardTitle>
                  <CardSubtitle style={{fontSize:"20px"}}><IoIosMusicalNote/>Artist</CardSubtitle>
                 <CardText>
-                  <p style={{marginTop:"5%"}}>Chai Tulani was born in Nakuru, Kenya and raised in Chicago, IL. Though Tulani moved to the states at only four years old, his culture remains one of the main ingredients of his music. Known for his raspy but soulful voice, Tulani creates a wide variety of music merging genres like reggae, soul, Afro beat and hip-hop.</p>
-                  <a style={{fontWeight:"bold"}}>Genre: </a><a>Afrobeat, hip-hop, pop</a><br/>
+                  <p style={{marginTop:"5%"}}>{artistProfile['bio']}</p>
+                  <a style={{fontWeight:"bold"}}>Genre: </a><a>{artistProfile['genre_tags']}</a><br/>
                   <a style={{fontWeight:"bold"}}>Next Show Near You: </a>
                   <a>TBD </a>
                 </CardText>
