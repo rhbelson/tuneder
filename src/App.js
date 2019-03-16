@@ -74,6 +74,17 @@ class App extends Component {
     this.setState({modal: !this.state.modal});
   }
 
+  optionEdit = (settingValue, statsValue) => {
+     
+      this.setState({
+        toggledStats: settingValue,
+        toggleStats: statsValue,
+      });
+      console.log("settingValue==", settingValue);
+      console.log("statsValue==", statsValue);
+    
+  }
+
   render() {
     const { loggedIn, toggledSettings, toggledStats, modal, username, artists} = this.state;
     return (
@@ -86,7 +97,7 @@ class App extends Component {
             handleChange = {this.handleUserChange} 
           />
         }
-        <NavContainer />
+        <NavContainer buttonClick={this.optionEdit.bind(this)} />
         <div className = "main">
           {modal && <Profile />}
           {(loggedIn&&toggledSettings) && <Settings />}

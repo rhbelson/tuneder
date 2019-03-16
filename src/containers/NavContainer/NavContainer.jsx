@@ -6,6 +6,22 @@ import { FaCog} from 'react-icons/fa';
 import { IoIosStats } from "react-icons/io";
 
 class NavContainer extends PureComponent { 
+    constructor(props) {
+        super(props);
+        this.state = { toggledSettings: false, toggledStats: false };
+        this.toggleSettings = this.toggleSettings.bind(this);
+        this.toggleStats=this.toggleStats.bind(this);
+    }
+
+    toggleSettings() {
+        this.props.buttonClick(!this.state.toggledSettings, this.state.toggledStats);
+        this.setState({toggledSettings: !this.state.toggledSettings});
+    }
+
+    toggleStats() {
+        this.props.buttonClick(this.state.toggledSettings, !this.state.toggleStats);
+        this.setState({toggleStats: !this.state.toggleStats});
+    }
   
     render () {
      
