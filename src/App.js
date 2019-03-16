@@ -78,19 +78,19 @@ class App extends Component {
   render() {
     const { loggedIn, toggledSettings, toggledStats, modal, username, artists} = this.state;
     return (
-      <div>
+      <div className="container">
         {!(loggedIn&&(username !=='artist')) && 
-        <Login
-          login = {this.login}
-          handleChange = {this.handleUserChange} 
-        />
+          <Login
+            login = {this.login}
+            handleChange = {this.handleUserChange} 
+          />
         }
-      <div className="container" style={{backgroundColor:"#166088",width:"100%"}}>
-        {modal && <Profile />}
-        {(loggedIn&&toggledSettings) && <Settings />}
-        {(loggedIn&&toggledStats) && <Status />}
-        {(loggedIn&&(username !=='artist')) && <CardContainer artists={artists} />}
-     </div>
+        <div className="container" style={{backgroundColor:"#166088",width:"100%"}}>
+          {modal && <Profile />}
+          {(loggedIn&&toggledSettings) && <Settings />}
+          {(loggedIn&&toggledStats) && <Status />}
+          {(loggedIn&&(username !=='artist')) && <CardContainer artists={artists} />}
+        </div>
 
       </div>
     );
