@@ -80,6 +80,7 @@ class App extends Component {
   }
 
   showProfile = (profileStatus, artistProfile) => {
+    console.log(artistProfile);
     this.setState({
       modal: profileStatus,
       artistProfile: artistProfile

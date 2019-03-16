@@ -13,12 +13,12 @@ class Settings extends PureComponent {
 
     this.state = {
       hasError: false,
-      value : 50,
+      value : 30,
     };
   }
 
-  handleChange = () => {
-    
+  handleChange = (event, value) => {
+    this.setState({ value });
   }
   render () {
     if (this.state.hasError) {
@@ -37,7 +37,7 @@ class Settings extends PureComponent {
           <SwitchExample name="Country"/>
         
           <div style={{backgroundColor:"#F6F5AE",padding:"2%"}}>
-            <Typography style={{width:"75%",fontSize: '18px',fontFamily: 'Roboto Slab, serif',marginTop:"1%"}} id="label">Adjust Your Radius: <a style={{fontWeight:"bold"}}>{ this.state.value } miles from me</a> </Typography>
+            <Typography id="label" style={{width:"75%",fontSize: '18px',fontFamily: 'Roboto Slab, serif',marginTop:"1%"}} id="label">Adjust Your Radius: <a style={{fontWeight:"bold"}}>{ this.state.value } miles from me</a> </Typography>
             <Slider style={{width:"65%",marginTop:"2%",marginBottom:"5%"}}
               value={this.state.value}
               aria-labelledby="label"

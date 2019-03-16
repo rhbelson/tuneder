@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 //import { Test } from './Profile.styles';
 import { Button, Modal, ModalHeader, ModalBody, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import { IoIosMusicalNote,  } from "react-icons/io";
-import Pic7 from '../../assets/images/artist7.jpg';
+
 class Profile extends PureComponent { 
   constructor(props) {
     super(props);

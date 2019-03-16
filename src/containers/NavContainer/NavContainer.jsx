@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import './NavContainer.css'
 
 import { Button, Col} from 'reactstrap';
-import { FaCog} from 'react-icons/fa';
+import { FaCog } from 'react-icons/fa';
 import { IoIosStats } from "react-icons/io";
 
 class NavContainer extends PureComponent { 
