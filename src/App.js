@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 import WebFont from 'webfontloader';
-// import { Button, Col} from 'reactstrap';
-// import { FaCog} from 'react-icons/fa';
-// import { IoIosStats } from "react-icons/io";
+
 import { toast } from 'react-toastify';
 
 import Profile from './components/Profile/Profile';
@@ -11,6 +9,7 @@ import Settings from './components/Settings/Settings';
 import Login from './containers/Login/Login';
 import Status from './components/Status/Status';
 import CardContainer from './containers/CardContainer/CardContainer';
+import NavContainer from './containers/NavContainer/NavContainer';
 
 import "./styles/App.css";
 import 'react-toastify/dist/ReactToastify.css';
@@ -79,13 +78,16 @@ class App extends Component {
     const { loggedIn, toggledSettings, toggledStats, modal, username, artists} = this.state;
     return (
       <div className="container">
+
+      
         {!(loggedIn&&(username !=='artist')) && 
           <Login
             login = {this.login}
             handleChange = {this.handleUserChange} 
           />
         }
-        <div className="container" style={{backgroundColor:"#166088",width:"100%"}}>
+        <NavContainer />
+        <div className = "main">
           {modal && <Profile />}
           {(loggedIn&&toggledSettings) && <Settings />}
           {(loggedIn&&toggledStats) && <Status />}

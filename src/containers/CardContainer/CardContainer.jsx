@@ -36,7 +36,6 @@ class CardContainer extends PureComponent {
       return <h1>Something went wrong.</h1>;
     }
     const { artists } = this.state;
-    console.log(artists);
     return (
       <div className="CardContainerWrapper">
       <ToastContainer />

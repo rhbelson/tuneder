@@ -1,0 +1,16 @@
+
+.nav {
+    background-color : #FF3A4E;
+}
+
+.navButton {
+    background-color :#577399;
+}
+
+.navButton.settingButton
+{
+    left: 0;
+}
+.navButton.statsButton {
+    margin-left: 5px;
+}
