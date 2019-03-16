@@ -36,7 +36,7 @@ class CardContainer extends PureComponent {
       return <h1>Something went wrong.</h1>;
     }
     const { artists } = this.state;
-
+    console.log(artists);
     return (
       <div className="CardContainerWrapper">
       <ToastContainer />
@@ -45,7 +45,7 @@ class CardContainer extends PureComponent {
           Object.keys(artists).map(key => 
                   <Card style={{backgroundColor:"#C0D6DF"}}>
                     <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >{artists[key]['artist']}</h5>
-                    <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={artists[key]['image']} />
+                    <div style={{height: "60%", overflow: "hidden"}}><img onClick={this.toggleProfile} style={{width:"100%",padding: "2% 2%"}} src={artists[key]['image']} /></div>
                     <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
                     <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
                       src={Clip1}
@@ -55,6 +55,7 @@ class CardContainer extends PureComponent {
                   </Card>
             )
           }
+
         </CardWrapper>
       </div>
     );

@@ -77,7 +77,6 @@ class App extends Component {
 
   render() {
     const { loggedIn, toggledSettings, toggledStats, modal, username, artists} = this.state;
-
     return (
       <div>
         {!(loggedIn&&(username !=='artist')) && 
