@@ -35,14 +35,27 @@ class NavContainer extends PureComponent {
     render () {
       return (
         <nav className="nav">
-        <Col xs="5">
-            <Button onClick={this.toggleSettings} className="navButton settingButton"><FaCog/></Button>
-            <Button onClick={this.toggleStats} className="navButton statsButton"><IoIosStats/></Button>
-        </Col>
-        <Col xs="7" className="navTitle">
+        {
+          this.state.loggedIn &&
+          <div className="nav">
+            <Col xs="4">
+                <Button onClick={this.toggleSettings} className="navButton settingButton"><FaCog/></Button>
+                <Button onClick={this.toggleStats} className="navButton statsButton"><IoIosStats/></Button>
+            </Col>
+            <Col xs="4" className="navTitle">
+              <div className="title" style={{fontWeight:"bold"}}>Crescendo</div>
+            </Col>
+            <Col xs="4">
+             <Button onClick={this.logOut} className="navButton logoutButton">Logout</Button>
+            </Col>
+          </div>
+
+        }
+        {
+          !this.state.loggedIn &&
           <div className="title" style={{fontWeight:"bold"}}>Crescendo</div>
-          {this.state.loggedIn && <Button onClick={this.logOut} className="navButton backButton">Logout</Button>}
-        </Col>
+        }
+        
         </nav>
       );
     }

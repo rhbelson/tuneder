@@ -6,6 +6,7 @@ import { Card, CardWrapper } from 'react-swipeable-cards';
 import ReactAudioPlayer from 'react-audio-player';
 import { Button } from '@material-ui/core';
 import { SocialIcon } from 'react-social-icons';
+import './CardContainer.css'
 class CardContainer extends PureComponent { 
   constructor(props) {
     super(props);
@@ -38,7 +39,7 @@ class CardContainer extends PureComponent {
                     <h5 onClick={() => this.showProfile(artists[key])} style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >{artists[key]['artist']}</h5>
                     <div onClick={() => this.showProfile(artists[key])} style={{height: "60%", overflow: "hidden"}}><img onClick={this.toggleProfile} style={{width:"100%",padding: "2% 2%"}} src={artists[key]['image']} /></div>
                     <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
-                    <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
+                    <ReactAudioPlayer style={{marginTop:"1%"}}
                       src={artists[key]['clip']}
                       controls
                     />

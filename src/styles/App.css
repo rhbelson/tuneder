@@ -1,7 +1,7 @@
 .container {
   display: flex;
   padding-top: 52px;
-  /* overflow: visible !important; */
+  overflow: visible !important;
 }
 .container .nav {
   width: 100%;
@@ -15,7 +15,7 @@
   background-color: #FF3A4E;
   color: #fff;
   height: 52px;
-  padding: 0 25px;
+  /* padding: 0 25px; */
 }
 .container .left-col {
   width: 320px;

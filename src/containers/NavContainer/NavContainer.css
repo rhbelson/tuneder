@@ -14,8 +14,8 @@
 .navButton.statsButton {
     margin-left: 5px;
 }
-.navButton.backButton {
-
+.navButton.logoutButton {
+    float: right;
 }
 
 .navTitle {
@@ -24,4 +24,7 @@
 }
 .navTitle .title {
     line-height: 2;
+}
+.title {
+    margin: auto;
 }
