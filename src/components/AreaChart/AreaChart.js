@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
-
+import withSizes from 'react-sizes'
 const data = [
   {
     name: 'January', Streams: 1890, Revenue: 4800, amt: 2181,
@@ -15,14 +15,14 @@ const data = [
   },
 ];
 
-export default class AChart extends PureComponent {
+class AChart extends PureComponent {
 
   render() {
     return (
       <div>
         <h5>Your Secret Streams</h5>
         <AreaChart
-          width={500}
+          width={this.props.isMobile?300:500}
           height={200}
           data={data}
           syncId="anyId"
@@ -38,7 +38,7 @@ export default class AChart extends PureComponent {
         </AreaChart>
         <h5 style={{marginTop:"3%"}}>Your Revenue ($0.01s USD)</h5>
         <AreaChart
-          width={500}
+          width={this.props.isMobile?300:500}
           height={200}
           data={data}
           syncId="anyId"
@@ -55,4 +55,11 @@ export default class AChart extends PureComponent {
       </div>
     );
   }
+
+  
 }
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width < 480,
+})
+
+export default withSizes(mapSizesToProps)(AChart)

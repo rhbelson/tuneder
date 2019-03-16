@@ -42,7 +42,7 @@ class NavContainer extends PureComponent {
         </Col>
         <Col xs="7" className="navTitle">
           <div className="title" style={{fontWeight:"bold"}}>Crescendo</div>
-          {this.state.loggedIn && <Button onClick={this.logOut} className="navButton backButton">Back</Button>}
+          {this.state.loggedIn && <Button onClick={this.logOut} className="navButton backButton">Logout</Button>}
         </Col>
         </nav>
       );
