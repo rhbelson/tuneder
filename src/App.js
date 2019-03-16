@@ -74,14 +74,13 @@ class App extends Component {
     this.setState({modal: !this.state.modal});
   }
 
-  optionEdit = (settingValue, statsValue) => {
-     
+  optionEdit = (settingValue, statsValue, loggedInStatus) => {
+     console.log(loggedInStatus);
       this.setState({
-        toggledStats: settingValue,
-        toggleStats: statsValue,
+        toggledSettings: settingValue,
+        toggledStats: statsValue,
+        loggedIn: loggedInStatus
       });
-      console.log("settingValue==", settingValue);
-      console.log("statsValue==", statsValue);
     
   }
 
@@ -97,7 +96,7 @@ class App extends Component {
             handleChange = {this.handleUserChange} 
           />
         }
-        <NavContainer buttonClick={this.optionEdit.bind(this)} />
+        <NavContainer buttonClick={this.optionEdit.bind(this)} loggedIn={ loggedIn }/>
         <div className = "main">
           {modal && <Profile />}
           {(loggedIn&&toggledSettings) && <Settings />}

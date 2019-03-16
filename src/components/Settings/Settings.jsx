@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import SwitchExample from '../../SwitchExample';
 import Slider from '@material-ui/lab/Slider';
 import Typography from '@material-ui/core/Typography';
+import './Settings.css'
 
 //import { Test } from './Settings.styles';
 

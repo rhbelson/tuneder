@@ -14,3 +14,14 @@
 .navButton.statsButton {
     margin-left: 5px;
 }
+.navButton.backButton {
+
+}
+
+.navTitle {
+    display: flex;
+    justify-content: space-between;
+}
+.navTitle .title {
+    line-height: 2;
+}

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Button, Row, Col} from 'reactstrap';
 import { IoIosMusicalNote, IoMdHeadset, IoIosMusicalNotes } from "react-icons/io";
 import { FaCog, FaMoneyBillWave } from 'react-icons/fa';
+import './Status.css'
 
 import {IoIosStats} from "react-icons/io";
 import AChart from '../AreaChart/AreaChart';

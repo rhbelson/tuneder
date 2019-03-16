@@ -42,7 +42,7 @@ class CardContainer extends PureComponent {
         <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
         {
           Object.keys(artists).map(key => 
-                  <Card style={{backgroundColor:"#C0D6DF"}}>
+                  <Card key={key} style={{backgroundColor:"#C0D6DF"}}>
                     <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >{artists[key]['artist']}</h5>
                     <div style={{height: "60%", overflow: "hidden"}}><img onClick={this.toggleProfile} style={{width:"100%",padding: "2% 2%"}} src={artists[key]['image']} /></div>
                     <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
