@@ -60,7 +60,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    return firebase.database().ref('Artists/').once('value').then(snapshot => {
+    return firebase.database().ref('Artists/').limitToFirst(5).once('value').then(snapshot => {
       const attributes = snapshot.val();
       console.log(attributes);
       this.setState({artists: attributes});
