@@ -4,5 +4,8 @@
 }
 .container .cards_container .card_container {
     min-height: 600px !important;
-    width: 60vw;
+}
+.CardContainerWrapper .container.artistCard {
+    color:red;
+    overflow: hidden !important;
 }

@@ -32,23 +32,23 @@ class CardContainer extends PureComponent {
     return (
       <div className="CardContainerWrapper">
       <ToastContainer />
-        <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
-        {
-          Object.keys(artists).map(key => 
-                  <Card key={key} style={{backgroundColor:"#C0D6DF"}}>
-                    <h5 onClick={() => this.showProfile(artists[key])} style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >{artists[key]['artist']}</h5>
-                    <div onClick={() => this.showProfile(artists[key])} style={{height: "50%", overflow: "hidden"}}><img onClick={this.toggleProfile} style={{width:"100%",padding: "2% 2%"}} src={artists[key]['image']} /></div>
-                    <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
-                    <ReactAudioPlayer style={{marginLeft:"12%",marginTop:"1%"}}
-                      src={artists[key]['clip']}
-                      controls
-                    />
-                    <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-                  </Card>
-            )
-          }
+      <CardWrapper id="artistCard" className="artistCard" style={{fontFamily: 'Roboto Slab, serif'}}>
+      {
+        Object.keys(artists).map(key => 
+                <Card key={key} style={{backgroundColor:"#C0D6DF"}}>
+                  <h5 onClick={() => this.showProfile(artists[key])} style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >{artists[key]['artist']}</h5>
+                  <div onClick={() => this.showProfile(artists[key])} style={{height: "50%", overflow: "hidden"}}><img onClick={this.toggleProfile} style={{width:"100%",padding: "2% 2%"}} src={artists[key]['image']} /></div>
+                  <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
+                  <ReactAudioPlayer style={{marginLeft:"12%",marginTop:"1%"}}
+                    src={artists[key]['clip']}
+                    controls
+                  />
+                  <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
+                </Card>
+          )
+        }
 
-        </CardWrapper>
+      </CardWrapper>
       </div>
     );
   }

@@ -118,3 +118,7 @@
   background-color:#166088;
   width: 100%;
 }
+.main .CardContainerWrapper .container {
+  color: red;
+  overflow: hidden !important;
+}
