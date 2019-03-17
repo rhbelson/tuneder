@@ -42,8 +42,7 @@ class Profile extends PureComponent {
                   <a style={{fontWeight:"bold"}}>Next Show Near You: </a>
                   <a>TBD </a>
                 </CardText>
-                <Button href={'https://mail.google.com/mail/?view=cm&fs=1&to=' + artistProfile['contact'] + '&su=Crescendo+User+Inquiry&body=Thank+you+for+choosing+Crescendo!'} style={{width:"100%"}}>Contact {artistProfile['artist']}</Button>
-              </CardBody>
+                <Button href={'https://mail.google.com/mail/?view=cm&fs=1&to=' + artistProfile['contact'] + '&su=Crescendo+User+Inquiry&body=Thank+you+for+choosing+Crescendo!'} style={{width:"100%"}}>Contact {artistProfile['artist']}</Button>              </CardBody>
           </ModalBody>
         </Modal>
       </div>
