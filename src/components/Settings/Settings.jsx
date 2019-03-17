@@ -13,11 +13,12 @@ class Settings extends PureComponent {
 
     this.state = {
       hasError: false,
-      value : 30,
+      value : this.props.value,
     };
   }
 
   handleChange = (event, value) => {
+    this.props.setValue(value);
     this.setState({ value });
   }
   render () {

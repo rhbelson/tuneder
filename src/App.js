@@ -93,8 +93,14 @@ class App extends Component {
     })
   }
 
+  setValue = (value) => {
+    this.setState({
+      value: value
+    })
+  }
+
   render() {
-    const { loggedIn, toggledSettings, toggledStats, modal, username, artists, artistProfile} = this.state;
+    const { loggedIn, toggledSettings, toggledStats, modal, username, artists, artistProfile, value} = this.state;
     return (
       <div className="container">
 
@@ -108,7 +114,7 @@ class App extends Component {
         <NavContainer buttonClick={this.optionEdit.bind(this)} loggedIn={ loggedIn }/>
         <div className = "main">
           {modal && <Profile modal={modal} artistProfile={artistProfile} closeProfile={this.closeProfile.bind(this)}/>}
-          {(loggedIn&&toggledSettings) && <Settings />}
+          {(loggedIn&&toggledSettings) && <Settings value={value} setValue={this.setValue.bind(this)}/>}
           {(loggedIn&&toggledStats) && <Status />}
           {(loggedIn&&(username !=='artist')) && <CardContainer artists={artists} showProfile={this.showProfile.bind(this)}/>}
         </div>
