@@ -3,7 +3,8 @@
     min-height: 900px;
 }
 .container .cards_container .card_container {
-    min-height: 600px !important;
+    height: 60% !important;
+    /* min-height: 600px !important; */
 }
 .CardContainerWrapper .container.artistCard {
     color:red;
