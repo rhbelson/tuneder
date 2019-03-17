@@ -45,7 +45,15 @@ class App extends Component {
       modal: false, 
       username: "Crescendo User", 
       artists:[],
-      artistProfile:[]
+      artistProfile:[],
+      rapChecked: false,
+      hipChecked: false,
+      jazzChecked: false,
+      classicalChecked: false,
+      edmChecked: false,
+      rockChecked: false,
+      popChecked: false,
+      countryChecked: false,
     };
   }
 
@@ -99,8 +107,56 @@ class App extends Component {
     })
   }
 
+  setRapChecked = (value) => {
+    this.setState({
+      rapChecked: value
+    })
+  }
+
+  setHipChecked = (value) => {
+    this.setState({
+      hipChecked: value
+    })
+  }
+
+  setJazzChecked = (value) => {
+    this.setState({
+      jazzChecked: value
+    })
+  }
+
+  setClassicalChecked = (value) => {
+    this.setState({
+      classicalChecked: value
+    })
+  }
+
+  setEDMChecked = (value) => {
+    this.setState({
+      edmChecked: value
+    })
+  }
+
+  setRockChecked = (value) => {
+    this.setState({
+      rockChecked: value
+    })
+  }
+
+  setPopChecked = (value) => {
+    this.setState({
+      popChecked: value
+    })
+  }
+
+  setCountryChecked = (value) => {
+    this.setState({
+      countryChecked: value
+    })
+  }
+
   render() {
-    const { loggedIn, toggledSettings, toggledStats, modal, username, artists, artistProfile, value} = this.state;
+    const { loggedIn, toggledSettings, toggledStats, modal, username, artists, artistProfile, value, rapChecked, hipChecked, jazzChecked, classicalChecked, edmChecked, rockChecked, popChecked, countryChecked} = this.state;
     return (
       <div className="container">
 
@@ -114,7 +170,15 @@ class App extends Component {
         <NavContainer buttonClick={this.optionEdit.bind(this)} loggedIn={ loggedIn }/>
         <div className = "main">
           {modal && <Profile modal={modal} artistProfile={artistProfile} closeProfile={this.closeProfile.bind(this)}/>}
-          {(loggedIn&&toggledSettings) && <Settings value={value} setValue={this.setValue.bind(this)}/>}
+          {(loggedIn&&toggledSettings) && <Settings value={value} setValue={this.setValue.bind(this)} 
+            rapChecked={rapChecked} setRapChecked={this.setRapChecked.bind(this)} 
+            hipChecked={hipChecked}  setHipChecked={this.setHipChecked.bind(this)} 
+            jazzChecked={jazzChecked} setJazzChecked={this.setHipChecked.bind(this)} 
+            classicalChecked={classicalChecked} setClassicalChecked={this.setClassicalChecked.bind(this)} 
+            edmChecked={edmChecked} setEDMChecked={this.setEDMChecked.bind(this)}
+            rockChecked={rockChecked} setRockChecked={this.setRockChecked.bind(this)}
+            popChecked={popChecked} setPopChecked={this.setPopChecked.bind(this)}
+            countryChecked={countryChecked} setCountryChecked={this.setCountryChecked.bind(this)}/>}
           {(loggedIn&&toggledStats) && <Status />}
           {(loggedIn&&(username !=='artist')) && <CardContainer artists={artists} showProfile={this.showProfile.bind(this)}/>}
         </div>

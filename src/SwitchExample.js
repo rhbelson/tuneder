@@ -4,11 +4,12 @@ import Switch from "react-switch";
 class SwitchExample extends Component {
   constructor(props) {
     super();
-    this.state = { checked: false, name: props.name };
+    this.state = { checked: props.settingChecked, name: props.name };
     this.handleChange = this.handleChange.bind(this);
   }
  
   handleChange(checked) {
+    this.props.checked(checked, this.state.name);
     this.setState({ checked });
   }
  
