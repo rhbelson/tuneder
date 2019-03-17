@@ -54,12 +54,15 @@ class App extends Component {
       rockChecked: false,
       popChecked: false,
       countryChecked: false,
+      startCard: 0,
+      endCard: 5,
     };
   }
 
   componentDidMount() {
-    return firebase.database().ref('Artists/').limitToFirst(5).once('value').then(snapshot => {
+    return firebase.database().ref('Artists/').once('value').then(snapshot => {
       const attributes = snapshot.val();
+      console.log(attributes);
       this.setState({artists: attributes});
       return attributes;
     })
@@ -155,6 +158,10 @@ class App extends Component {
     })
   }
 
+  resetCards = (value) => {
+    // this.setState({artists: attributes});
+  }
+
   render() {
     const { loggedIn, toggledSettings, toggledStats, modal, username, artists, artistProfile, value, rapChecked, hipChecked, jazzChecked, classicalChecked, edmChecked, rockChecked, popChecked, countryChecked} = this.state;
     return (
@@ -180,7 +187,7 @@ class App extends Component {
             popChecked={popChecked} setPopChecked={this.setPopChecked.bind(this)}
             countryChecked={countryChecked} setCountryChecked={this.setCountryChecked.bind(this)}/>}
           {(loggedIn&&toggledStats) && <Status />}
-          {(loggedIn&&(username !=='artist')) && <CardContainer artists={artists} showProfile={this.showProfile.bind(this)}/>}
+          {(loggedIn&&(username !=='artist')) && <CardContainer artists={artists} showProfile={this.showProfile.bind(this)} resetCards={this.resetCards.bind(this)}/>}
         </div>
 
       </div>

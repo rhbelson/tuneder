@@ -23,6 +23,10 @@ class CardContainer extends PureComponent {
     this.props.showProfile(!this.state.profile, artistProfile);
   }
 
+  onSwipe(data) {
+    this.props.resetCards(true);
+  }
+
   render () {
     
     if (this.state.hasError) {
@@ -35,7 +39,7 @@ class CardContainer extends PureComponent {
       <CardWrapper id="artistCard" className="artistCard" style={{fontFamily: 'Roboto Slab, serif'}}>
       {
         Object.keys(artists).map(key => 
-                <Card key={key} style={{backgroundColor:"#C0D6DF"}}>
+                <Card key={key} onSwipe={this.onSwipe.bind(this)} style={{backgroundColor:"#C0D6DF"}}>
                   <h5 onClick={() => this.showProfile(artists[key])} style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >{artists[key]['artist']}</h5>
                   <div onClick={() => this.showProfile(artists[key])} style={{height: "50%", overflow: "hidden"}}><img onClick={this.toggleProfile} style={{width:"100%",padding: "2% 2%"}} src={artists[key]['image']} /></div>
                   <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
