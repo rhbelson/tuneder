@@ -73,7 +73,7 @@ class CardContainer extends PureComponent {
                   <div onClick={() => this.showProfile(artist)} style={{height: "50%", overflow: "hidden"}}><img onClick={this.toggleProfile} style={{width:"100%",padding: "2% 2%"}} src={artist['image']} /></div>
                   <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
                   <ReactAudioPlayer style={{marginLeft:"12%",marginTop:"1%"}}
-                    src={artist['clip']}
+                    src={"https://doc-04-a4-docs.googleusercontent.com/docs/securesc/75ac187d8kgbe5hast68brsedh5a5sk6/ooj9g89hlb49kubphfpu1gk1s80esokm/1552874400000/04732938767685825812/13557726038459389031/1o4n3AnjsbQ0W_lIFT8SmjIs-mzUiouDH"}
                     controls
                   />
                   <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
