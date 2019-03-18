@@ -118,6 +118,12 @@
   background-color:#166088;
   width: 100%;
 }
+@media all and (max-width: 480px) {
+  .main {
+   
+    margin-top: -15vh;
+  }
+}
 .main .CardContainerWrapper .container {
   color: red;
   overflow: hidden !important;

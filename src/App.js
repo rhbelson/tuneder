@@ -14,6 +14,7 @@ import NavContainer from './containers/NavContainer/NavContainer';
 import "./styles/App.css";
 import 'react-toastify/dist/ReactToastify.css';
 
+
 let firebase = require("firebase");
 let config = {
     apiKey: "AIzaSyDJps32F1QsgoVrC0BQeTqu-DgtpGOskVM",

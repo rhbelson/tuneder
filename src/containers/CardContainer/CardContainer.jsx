@@ -69,7 +69,7 @@ class CardContainer extends PureComponent {
       {
         artistCard.map(artist => 
                 <Card key={artist.artist} onSwipe={this.onSwipe.bind(this)} style={{backgroundColor:"#C0D6DF"}}>
-                  <h5 onClick={() => this.showProfile(artist)} style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >{artist['artist']}</h5>
+                  <h5 onClick={() => this.showProfile(artist)} style={{textAlign:"center",color:"#000000",marginTop:"10%"}} >{artist['artist']}</h5>
                   <div onClick={() => this.showProfile(artist)} style={{height: "50%", overflow: "hidden"}}><img onClick={this.toggleProfile} style={{width:"100%",padding: "2% 2%"}} src={artist['image']} /></div>
                   <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
                   <ReactAudioPlayer style={{marginLeft:"12%",marginTop:"1%"}}
