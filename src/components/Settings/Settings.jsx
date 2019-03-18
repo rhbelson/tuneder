@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import SwitchExample from '../../SwitchExample';
 import Slider from '@material-ui/lab/Slider';
 import Typography from '@material-ui/core/Typography';
@@ -33,13 +33,13 @@ class Settings extends PureComponent {
 
   checked = (value, name) => {
     
-    if(name == "Rap") {this.setState({ rapChecked : value}); this.props.setRapChecked(value);}
-    else if (name == "Hip Hop/R&B") {this.setState({ hipChecked : value}); this.props.setHipChecked(value);}
-    else if (name == "Jazz") {this.setState({ jazzChecked : value}); this.props.setJazzChecked(value);}
-    else if (name == "Classical") {this.setState({ classicalChecked : value}); this.props.setClassicalChecked(value);}
-    else if (name == "EDM/House") {this.setState({ edmChecked : value}); this.props.setEDMChecked(value);}
-    else if (name == "Rock") {this.setState({ rockChecked : value}); this.props.setRockChecked(value);}
-    else if (name == "Pop") {this.setState({ popChecked : value}); this.props.setPopChecked(value);}
+    if(name === "Rap") {this.setState({ rapChecked : value}); this.props.setRapChecked(value);}
+    else if (name === "Hip Hop/R&B") {this.setState({ hipChecked : value}); this.props.setHipChecked(value);}
+    else if (name === "Jazz") {this.setState({ jazzChecked : value}); this.props.setJazzChecked(value);}
+    else if (name === "Classical") {this.setState({ classicalChecked : value}); this.props.setClassicalChecked(value);}
+    else if (name === "EDM/House") {this.setState({ edmChecked : value}); this.props.setEDMChecked(value);}
+    else if (name === "Rock") {this.setState({ rockChecked : value}); this.props.setRockChecked(value);}
+    else if (name === "Pop") {this.setState({ popChecked : value}); this.props.setPopChecked(value);}
     else {this.setState({ countryChecked : value}); this.props.setCountryChecked(value);}
 
     
