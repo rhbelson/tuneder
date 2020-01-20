@@ -7,28 +7,25 @@ import Pic7 from '../../assets/images/artist7.jpg';
 class Profile extends PureComponent { 
   constructor(props) {
     super(props);
-
-    this.state = {
-      hasError: false,
-    };
+    this.state = {modal: props.modal};
   }
-
+  toggleProfile = () => {
+    this.setState({modal: !this.state.modal});
+  }
   render () {
-    if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
-    }
+    const {data} = this.props;
+    console.log(data);
     return (
       <div className="ProfileWrapper">
-        <Modal isOpen={this.state.modal}>
-          <ModalHeader toggle={this.toggleProfile}></ModalHeader>
+        <Modal isOpen={this.props.modal}>
+          <ModalHeader toggle={this.props.toggleProfile}></ModalHeader>
           <ModalBody>
-
-              <CardImg top style={{width:"100%"}} src={Pic7}  />
+              <CardImg top style={{width:"100%"}} src={data.imgSrc}  />
               <CardBody>
-                 <CardTitle style={{textAlign:"left",fontWeight:"bold",fontSize:"20px"}}>Chai Tulani</CardTitle>
+                 <CardTitle style={{textAlign:"left",fontWeight:"bold",fontSize:"20px"}}>{data.name}</CardTitle>
                  <CardSubtitle style={{fontSize:"20px"}}><IoIosMusicalNote/>Artist</CardSubtitle>
                 <CardText>
-                  <p style={{marginTop:"5%"}}>Chai Tulani was born in Nakuru, Kenya and raised in Chicago, IL. Though Tulani moved to the states at only four years old, his culture remains one of the main ingredients of his music. Known for his raspy but soulful voice, Tulani creates a wide variety of music merging genres like reggae, soul, Afro beat and hip-hop.</p>
+                  <p style={{marginTop:"5%"}}>{data.Bio}</p>
                   <a style={{fontWeight:"bold"}}>Genre: </a><a>Afrobeat, hip-hop, pop</a><br/>
                   <a style={{fontWeight:"bold"}}>Next Show Near You: </a>
                   <a>TBD </a>

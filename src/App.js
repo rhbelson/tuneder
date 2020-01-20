@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-
 import WebFont from 'webfontloader';
-import { Button, Col} from 'reactstrap';
-import { FaCog} from 'react-icons/fa';
-import {IoIosStats} from "react-icons/io";
 import { toast } from 'react-toastify';
-
 import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 import Login from './containers/Login/Login';
@@ -13,7 +8,9 @@ import Status from './components/Status/Status';
 import CardContainer from './containers/CardContainer/CardContainer';
 
 import "./styles/App.css";
-import 'react-toastify/dist/ReactToastify.css';
+
+import NavBar from './components/NavBar/NavBar';
+
 
 // https://github.com/ravelinx22/react-swipeable-cards
 WebFont.load({
@@ -59,13 +56,14 @@ class App extends Component {
           handleChange = {this.handleUserChange} 
         />
         }
-      <div className="container" style={{backgroundColor:"#166088",width:"100%"}}>
+      {loggedIn&&<div className="container-main container" style={{backgroundColor:"#f8f9fc",width:"100%"}}>
+        <NavBar toggleSettings={this.toggleSettings} toggleStats={this.toggleStats} />
         {modal && <Profile />}
-        {(loggedIn&&toggledSettings) && <Settings />}
-        {(loggedIn&&toggledStats) && <Status />}
-        {(loggedIn&&(username !='artist')) && <CardContainer/>}
-     </div>
-
+        {(toggledSettings) && <Settings />}
+        {(toggledStats) && <Status />}
+        {/* {(username !='artist') && <CardContainer/>} */}
+        <CardContainer/>
+      </div>}
       </div>
     );
   }

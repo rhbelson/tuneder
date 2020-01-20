@@ -1,0 +1,21 @@
+.container-chart {
+    width: 100%;
+    padding: 0;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+
+}
+
+.container-chart .card {
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: .35rem;
+}
+
+.container-chart .card > h5 {
+    color: #4e73df!important;
+}

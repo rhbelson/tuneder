@@ -20,13 +20,67 @@ import Clip6 from "../../assets/musics/Morimoto_clip.mp3";
 import Clip7 from "../../assets/musics/tulani_clip.mp3";
 import { Button } from '@material-ui/core';
 import { SocialIcon } from 'react-social-icons';
+import ArtistCard from '../../components/ArtistCard/ArtistCard';
+import Profile from '../../components/Profile/Profile';
+
+const data = [
+  {
+    name: 'No Name', 
+    imgSrc: Pic1, 
+    descripton: 'Support This Artist', 
+    clipSrc: Clip1, 
+    linkTwitter:"http://twitter.com/", 
+    linkInstagram :"http://instagram.com",
+    linkSoundCloud : "http://soundcloud.com",
+    linkSpotify: "http://spotify.com/",
+    Bio: "Chai Tulani was born in Nakuru, Kenya and raised in Chicago, IL. Though Tulani moved to the states at only four years old, his culture remains one of the main ingredients of his music. Known for his raspy but soulful voice, Tulani creates a wide variety of music merging genres like reggae, soul, Afro beat and hip-hop.",
+  },
+  {
+    name: 'LAVANGOGH', 
+    imgSrc: Pic2, 
+    descripton: 'Support This Artist', 
+    clipSrc: Clip2, 
+    linkTwitter:"http://twitter.com/", 
+    linkInstagram :"http://instagram.com",
+    linkSoundCloud : "http://soundcloud.com",
+    linkSpotify: "http://spotify.com/",
+    Bio: "Chai Tulani was born in Nakuru, Kenya and raised in Chicago, IL. Though Tulani moved to the states at only four years old, his culture remains one of the main ingredients of his music. Known for his raspy but soulful voice, Tulani creates a wide variety of music merging genres like reggae, soul, Afro beat and hip-hop.",
+  },
+  {
+    name: 'JEANDEAUX', 
+    imgSrc: Pic3, 
+    descripton: 'Support This Artist', 
+    clipSrc: Clip3, 
+    linkTwitter:"http://twitter.com/", 
+    linkInstagram :"http://instagram.com",
+    linkSoundCloud : "http://soundcloud.com",
+    linkSpotify: "http://spotify.com/",
+    Bio: "Chai Tulani was born in Nakuru, Kenya and raised in Chicago, IL. Though Tulani moved to the states at only four years old, his culture remains one of the main ingredients of his music. Known for his raspy but soulful voice, Tulani creates a wide variety of music merging genres like reggae, soul, Afro beat and hip-hop.",
+  },
+  {
+    name: 'NESSHEADS', 
+    imgSrc: Pic4, 
+    descripton: 'Support This Artist', 
+    clipSrc: Clip4, 
+    linkTwitter:"http://twitter.com/", 
+    linkInstagram :"http://instagram.com",
+    linkSoundCloud : "http://soundcloud.com",
+    linkSpotify: "http://spotify.com/",
+    Bio: "Chai Tulani was born in Nakuru, Kenya and raised in Chicago, IL. Though Tulani moved to the states at only four years old, his culture remains one of the main ingredients of his music. Known for his raspy but soulful voice, Tulani creates a wide variety of music merging genres like reggae, soul, Afro beat and hip-hop.",
+  }      
+]
+
+
 class CardContainer extends PureComponent { 
   constructor(props) {
     super(props);
 
     this.state = {
-      hasError: false,
+      modal : false,
     }; 
+  }
+  toggleProfile = () => {
+    this.setState({modal: !this.state.modal});
   }
 
   render () {
@@ -34,86 +88,12 @@ class CardContainer extends PureComponent {
       return <h1>Something went wrong.</h1>;
     }
     return (
-      <div className="CardContainerWrapper">
+      <div className="CardContainerWrapper main">
       <ToastContainer />
         <CardWrapper style={{fontFamily: 'Roboto Slab, serif'}}>
-            <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NONAME</h5>
-              <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic1}/>
-              <Button style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
-              <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
-                src={Clip1}
-                controls
-              />
-              <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-            </Card>
-
-            <Card onSwipe={this.renderNoMoreCards} style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >TULANI</h5>
-              <img onClick={this.toggleProfile} style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic7}/>
-              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
-               <ReactAudioPlayer style={{marginLeft:"13%",marginTop:"1%"}}
-                src={Clip7}
-                controls
-              />
-               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-            </Card>
-
-            <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >L.A. VanGogh</h5>
-              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic2 }/>
-              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"1%"}}> Support This Artist</Button>
-               <ReactAudioPlayer style={{marginLeft:"13%"}}
-                src={Clip2}
-                controls
-              />
-               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-            </Card>
-
-            <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >Jean Deaux</h5>
-              <img style={{height:"50%",marginLeft:"10%",marginTop:"2%"}} src={Pic3}/>
-              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
-               <ReactAudioPlayer style={{marginLeft:"13%"}}
-                src={Clip3}
-                controls
-              />
-               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-            </Card>
-
-            <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >NESS HEADS</h5>
-              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic4}/>
-              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
-               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-                <ReactAudioPlayer style={{marginLeft:"13%"}}
-                src={Clip4}
-                controls
-              />
-            </Card>
-
-            <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >OMAR APOLLO</h5>
-              <img style={{height:"50%",marginLeft:"2%",marginTop:"2%"}} src={Pic5}/>
-              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
-               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-              <ReactAudioPlayer style={{marginLeft:"13%"}}
-                src={Clip5}
-                controls
-              />
-            </Card>
-
-            <Card style={{backgroundColor:"#C0D6DF"}}>
-              <h5 style={{textAlign:"center",color:"#000000",marginTop:"5%"}} >SEN MORIMOTO</h5>
-              <img style={{height:"50%",marginLeft:"22%",marginTop:"2%"}} src={Pic6}/>
-              <Button onClick={this.notify} color="danger" style={{backgroundColor:"#D8315B",border:"none", marginLeft:"10%",width:"80%",marginTop:"5%",marginBottom:"5%"}}> Support This Artist</Button>
-               <SocialIcon style={{marginLeft:"20%"}} url="http://twitter.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://instagram.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://soundcloud.com/"/><SocialIcon style={{marginLeft:"2%"}} url="http://spotify.com/"/>
-              <ReactAudioPlayer style={{marginLeft:"13%"}}
-                src={Clip6}
-                controls
-              />
-            </Card>
-
+          {
+            data.map((item,index) => <ArtistCard key = {index} data = {item} /> )
+          }
         </CardWrapper>
       </div>
     );

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import SwitchExample from '../../SwitchExample';
 import Slider from '@material-ui/lab/Slider';
 import Typography from '@material-ui/core/Typography';
-
-//import { Test } from './Settings.styles';
+import SwitchCard from '../SwitchCard/SwitchCard';
+import RadiusSlider from '../RadiusSlider/RadiusSlider';
+import './Settings.css';
 
 class Settings extends PureComponent { 
   constructor(props) {
@@ -13,32 +14,35 @@ class Settings extends PureComponent {
     this.state = {
       hasError: false,
       value : 50,
+      data : [
+        { id: '1', name: 'Rap' } ,
+        { id: '2', name: 'Hip Hop/R&B'} ,
+        { id: '3', name: 'Jazz'} ,
+        { id: '4', name: 'Classical'} ,
+        { id: '5', name: 'EDM/House'} ,
+        { id: '5', name: 'Rock'} ,
+        { id: '6', name: 'Pop'} ,
+        { id: '7', name: 'Country'} ,
+      ]
     };
   }
 
   render () {
-    if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
-    }
+    const {data} = this.state;
     return (
       <div className="SettingsWrapper">
-        <div style={{marginTop:"2%",fontFamily: 'Roboto Slab, serif'}}>
-          <SwitchExample name="Rap"/>
-          <SwitchExample name="Hip Hop/R&B"/>
-          <SwitchExample name="Jazz"/>
-          <SwitchExample name="Classical"/>
-          <SwitchExample name="EDM/House"/>
-          <SwitchExample name="Rock"/>
-          <SwitchExample name="Pop"/>
-          <SwitchExample name="Country"/>
-        
-          <div style={{backgroundColor:"#F6F5AE",padding:"2%"}}>
-            <Typography style={{width:"75%",fontSize: '18px',fontFamily: 'Roboto Slab, serif',marginTop:"1%"}} id="label">Adjust Your Radius: <a style={{fontWeight:"bold"}}>{ this.state.value } miles from me</a> </Typography>
-            <Slider style={{width:"65%",marginTop:"2%",marginBottom:"5%"}}
-              value={this.state.value}
-              aria-labelledby="label"
-              onChange={this.handleChange}
-            />
+        <div className='row'>
+          {
+            data.map(item => (
+              <div className='col-12 col-sm-6 col-md-4 col-lg-3'>
+                <SwitchCard id={item.id} caption={item.name} /> 
+              </div>
+            ))
+          }
+        </div>
+        <div className='row'>
+          <div className='col-12 col-md-8 col-lg-6'>
+            <RadiusSlider />
           </div>
         </div>
       </div>

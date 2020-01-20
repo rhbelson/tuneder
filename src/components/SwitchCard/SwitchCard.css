@@ -1,0 +1,23 @@
+.SwitchCardWrapper {
+    height: 80px;
+    margin-bottom: 20px;
+    min-width: 217px;
+    justify-content: space-between;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    border-radius: 5px;
+    padding: 0px 10px 0px 20px;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: .35rem;
+    color: #5a5c69!important;
+}
+.SwitchCardWrapper .span-title {
+    float: left;
+    margin-top: 26px;
+    font-size: 20px;
+}
+.SwitchCardWrapper .span-switch {
+    float: right;
+    margin-top: 14px;
+}

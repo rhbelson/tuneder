@@ -1,0 +1,46 @@
+.StatusWrapper {
+    padding-top: 20px;
+    font-family: 'Roboto Slab, serif'
+}
+
+.StatusWrapper .div-card {
+    height: 153px;
+    margin-bottom: 20px;
+    min-width: 340px;
+    justify-content: space-between;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    border-radius: 5px;
+    padding: 0px 10px 0px 20px;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+    border-radius: .35rem;
+    color: #5a5c69!important;
+}
+.StatusWrapper .blue-color {
+    border-left: .25rem solid #4e73df!important;    
+}
+.StatusWrapper .green-color {
+    border-left: .25rem solid #1cc88a!important;    
+}
+.StatusWrapper .other-color {
+    border-left: .25rem solid #36b9cc!important;    
+}
+.StatusWrapper .div-card .type1 {
+    margin-top: 27px;
+    color: #4e73df!important;
+}
+.StatusWrapper .div-card .type2 {
+    margin-top: 27px;
+    color: #1cc88a!important;
+}
+.StatusWrapper .div-card .type3 {
+    margin-top: 27px;
+    color: #36b9cc!important;
+}
+
+
+.StatusWrapper .div-card .value {
+    font-weight: bold;
+    font-size: 25px;
+}

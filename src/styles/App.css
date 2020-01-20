@@ -2,6 +2,16 @@
   display: flex;
   padding-top: 52px;
 }
+.btn-secondary {
+  color: #fff;
+  background-color: #4e73df !important;
+  border-color: #4e73df !important; 
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
 .container .nav {
   width: 100%;
   position: fixed;
@@ -11,10 +21,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FF3A4E;
+  background-color: #4e73df;
   color: #fff;
   height: 52px;
   padding: 0 25px;
+}
+
+.container-main {
+  height: auto;
 }
 .container .left-col {
   width: 320px;

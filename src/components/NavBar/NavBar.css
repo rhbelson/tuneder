@@ -1,0 +1,9 @@
+.NavBarWrapper .nav {
+    justify-content: space-between;
+}
+.NavBarWrapper .title {
+    text-align: center;
+}
+.NavBarWrapper .btn-logout {
+    float: right;
+}
